@@ -173,6 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           const SizedBox(width: 12),
                           Container(
+                            // margin: EdgeInsets.only(),
                             height: 52,
                             width: 52,
                             decoration: BoxDecoration(
@@ -197,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   // ===== Brand Chips =====
                   SliverToBoxAdapter(
-                    child: SizedBox(
+                    child: Container(
                       height: 44,
                       child: ListView.separated(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -257,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
 
-                  const SliverToBoxAdapter(child: SizedBox(height: 12)),
+                  SliverToBoxAdapter(child: SizedBox(height: 12)),
 
                   // ===== Title row =====
                   SliverToBoxAdapter(

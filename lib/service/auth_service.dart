@@ -82,7 +82,6 @@ class AuthService {
   static Future<void> signInWithGoogle(BuildContext context) async {
     try {
       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-
       if (googleUser == null) return;
 
       final GoogleSignInAuthentication googleAuth =
@@ -109,7 +108,7 @@ class AuthService {
       log("Google Sign-In Error: $e");
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text("Google Sign-In failed")));
+      ).showSnackBar(const SnackBar(content: Text("Google Sign-In failed }")));
     }
   }
 }
