@@ -311,6 +311,13 @@ class DetailScreen extends StatelessWidget {
                                         ),
                                       ),
                                     );
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text("Added to cart successfully"),
+                                        duration: Duration(seconds: 2),
+                                        behavior: SnackBarBehavior.floating,
+                                      ),
+                                    );
                                     Navigator.pop(context);
                                   }
                                 : null,

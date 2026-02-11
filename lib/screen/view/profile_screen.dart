@@ -22,10 +22,10 @@ class ProfileScreen extends StatelessWidget {
               // ===== Top Bar =====
               Row(
                 children: [
-                  _GlassIconBtn(
-                    icon: Icons.arrow_back,
-                    onTap: () => Navigator.pop(context),
-                  ),
+                  // _GlassIconBtn(
+                  //   icon: Icons.arrow_back,
+                  //   onTap: () => Navigator.pop(context),
+                  // ),
                   const SizedBox(width: 12),
                   const Expanded(
                     child: Text(

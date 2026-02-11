@@ -26,10 +26,7 @@ class FavoriteScreen extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(16, 10, 16, 14),
                     child: Row(
                       children: [
-                        _GlassIconBtn(
-                          icon: Icons.arrow_back,
-                          onTap: () => Navigator.pop(context),
-                        ),
+                        
                         const SizedBox(width: 12),
                         const Expanded(
                           child: Text(

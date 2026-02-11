@@ -100,10 +100,6 @@ class _SearchScreenState extends State<SearchScreen> {
                       padding: const EdgeInsets.fromLTRB(16, 10, 16, 12),
                       child: Row(
                         children: [
-                          _GlassRoundButton(
-                            icon: Icons.arrow_back,
-                            onTap: () => Navigator.pop(context),
-                          ),
                           const SizedBox(width: 12),
                           const Expanded(
                             child: Text(
@@ -392,6 +388,7 @@ class _SortMenu extends StatelessWidget {
   }
 }
 
+// ignore: unused_element
 class _GlassRoundButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;

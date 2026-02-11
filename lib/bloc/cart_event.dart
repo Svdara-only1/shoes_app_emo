@@ -21,3 +21,6 @@ class RemoveItem extends CartEvent {
   final int index;
   RemoveItem({required this.index});
 }
+class ClearCart extends CartEvent{
+  
+}

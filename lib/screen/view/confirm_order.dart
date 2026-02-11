@@ -1,4 +1,5 @@
 import 'package:computer_store/screen/view/payment_screen.dart';
+import 'package:computer_store/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
@@ -7,6 +8,13 @@ import 'dart:math' show cos, sqrt, asin;
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+
+/* =========================
+   COLOR CLASS
+========================= */
+// class Colorr {
+//   static var primaryColorBlue = 0xFF02085B;
+// }
 
 /* =========================
    SHOP MODEL
@@ -35,7 +43,7 @@ class Shop {
    CONFIRM ORDER PAGE
 ========================= */
 class ConfirmOrder extends StatefulWidget {
- final double total;
+  final double total;
   const ConfirmOrder({super.key, required this.total});
 
   @override
@@ -162,7 +170,10 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
               padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.blue[700]!, Colors.blue[500]!],
+                  colors: [
+                    Color(Colorr.primaryColorBlue),
+                    Color(Colorr.primaryColorBlue).withOpacity(0.8),
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -246,7 +257,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
                           color: selectedAddress.isNotEmpty
-                              ? Colors.blue[700]!
+                              ? Color(Colorr.primaryColorBlue)
                               : Colors.grey[300]!,
                           width: selectedAddress.isNotEmpty ? 2 : 1,
                         ),
@@ -269,7 +280,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   color: selectedAddress.isNotEmpty
-                                      ? Colors.blue[50]
+                                      ? Color(Colorr.primaryColorBlue).withOpacity(0.1)
                                       : Colors.grey[100],
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -278,7 +289,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                                       ? Icons.check_circle
                                       : Icons.add_location,
                                   color: selectedAddress.isNotEmpty
-                                      ? Colors.blue[700]
+                                      ? Color(Colorr.primaryColorBlue)
                                       : Colors.grey[600],
                                   size: 24,
                                 ),
@@ -394,7 +405,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 8, vertical: 2),
                                           decoration: BoxDecoration(
-                                            color: Colors.blue[50],
+                                            color: Color(Colorr.primaryColorBlue).withOpacity(0.1),
                                             borderRadius:
                                                 BorderRadius.circular(4),
                                           ),
@@ -402,7 +413,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                                             selectedShop!.type,
                                             style: TextStyle(
                                               fontSize: 12,
-                                              color: Colors.blue[700],
+                                              color: Color(Colorr.primaryColorBlue),
                                             ),
                                           ),
                                         ),
@@ -422,7 +433,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                                 child: Row(
                                   children: [
                                     Icon(Icons.route,
-                                        size: 20, color: Colors.blue[700]),
+                                        size: 20, color: Color(Colorr.primaryColorBlue)),
                                     const SizedBox(width: 8),
                                     Column(
                                       crossAxisAlignment:
@@ -440,7 +451,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                                           style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w600,
-                                            color: Colors.blue[700],
+                                            color: Color(Colorr.primaryColorBlue),
                                           ),
                                         ),
                                       ],
@@ -550,18 +561,18 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
         child: ElevatedButton(
           onPressed: selectedAddress.isNotEmpty
               ? () {
-                  // Navigate to PaymentMethodd - Replace with your actual navigation
+                  // Navigate to PaymentScreen
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          PaymentScreen(totalAmount: widget.total,),
+                          PaymentScreen(totalAmount: widget.total),
                     ),
                   );
                 }
               : null,
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue[700],
+            backgroundColor: Color(Colorr.primaryColorBlue),
             disabledBackgroundColor: Colors.grey[300],
             padding: const EdgeInsets.symmetric(vertical: 16),
             shape: RoundedRectangleBorder(
@@ -976,14 +987,14 @@ class _LocationPickerState extends State<LocationPicker> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 2),
                             decoration: BoxDecoration(
-                              color: Colors.blue[50],
+                              color: Color(Colorr.primaryColorBlue).withOpacity(0.1),
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Text(
                               shop.type,
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.blue[700],
+                                color: Color(Colorr.primaryColorBlue),
                               ),
                             ),
                           ),
@@ -1021,19 +1032,19 @@ class _LocationPickerState extends State<LocationPicker> {
                   child: Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.blue[50],
+                      color: Color(Colorr.primaryColorBlue).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Column(
                       children: [
-                        Icon(Icons.route, color: Colors.blue[700]),
+                        Icon(Icons.route, color: Color(Colorr.primaryColorBlue)),
                         const SizedBox(height: 4),
                         Text(
                           '${distance.toStringAsFixed(1)} km',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue[700],
+                            color: Color(Colorr.primaryColorBlue),
                           ),
                         ),
                         Text(
@@ -1415,7 +1426,7 @@ class _LocationPickerState extends State<LocationPicker> {
                       height: 24,
                       child: CircularProgressIndicator(strokeWidth: 2),
                     )
-                  : Icon(Icons.my_location, color: Colors.blue[700]),
+                  : Icon(Icons.my_location, color: Color(Colorr.primaryColorBlue)),
             ),
           ),
 
@@ -1432,7 +1443,7 @@ class _LocationPickerState extends State<LocationPicker> {
                   },
                   backgroundColor: Colors.white,
                   elevation: 4,
-                  child: Icon(Icons.add, color: Colors.blue[700]),
+                  child: Icon(Icons.add, color: Color(Colorr.primaryColorBlue)),
                 ),
                 const SizedBox(height: 8),
                 FloatingActionButton.small(
@@ -1442,7 +1453,7 @@ class _LocationPickerState extends State<LocationPicker> {
                   },
                   backgroundColor: Colors.white,
                   elevation: 4,
-                  child: Icon(Icons.remove, color: Colors.blue[700]),
+                  child: Icon(Icons.remove, color: Color(Colorr.primaryColorBlue)),
                 ),
               ],
             ),
@@ -1488,11 +1499,11 @@ class _LocationPickerState extends State<LocationPicker> {
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.blue[50],
+                          color: Color(Colorr.primaryColorBlue).withOpacity(0.1),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Icon(Icons.location_on,
-                            color: Colors.blue[700], size: 24),
+                            color: Color(Colorr.primaryColorBlue), size: 24),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -1624,7 +1635,7 @@ class _LocationPickerState extends State<LocationPicker> {
                           icon: const Icon(Icons.check),
                           label: const Text("Confirm Location"),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue[700],
+                            backgroundColor: Color(Colorr.primaryColorBlue),
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 14),
                             shape: RoundedRectangleBorder(

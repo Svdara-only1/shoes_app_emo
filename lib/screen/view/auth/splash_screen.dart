@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     final isLoggedIn = await saveLogin.isLoggedIn();
 
-    if (!mounted) return; // 🔑 important
+    if (!mounted) return;
 
     Navigator.pushReplacement(
       context,
@@ -50,14 +50,14 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
             const SizedBox(height: 130),
-            Image.asset("assets/images/logoComputer.png"),
+            Image.asset("assets/images/logoShoes.png"),
             const SizedBox(height: 20),
             Center(
               child: Text(
-                "Ecommerce Shoese",
+                "WELCOM !",
                 style: TextStyle(
                   fontSize: 35,
-                  color: Color(Colorr.primaryColorLitter),
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),

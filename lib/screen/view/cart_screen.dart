@@ -19,7 +19,7 @@ class CartScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           "My Cart",
-          style: TextStyle(fontWeight: FontWeight.w600),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
         ),
         actions: [
           Container(
@@ -303,7 +303,7 @@ class CartScreen extends StatelessWidget {
                           child: Text(
                             "Check out",
                             style: TextStyle(
-                              color: Color(Colorr.primaryColorLitter),
+                              color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.w700,
                             ),

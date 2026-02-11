@@ -23,7 +23,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       state.cartList[event.index].stock=state.cartList[event.index].stock!-1;
       emit(CartState(cartList: state.cartList));
     },);
-    // ✅ NEW remove
     on<RemoveItem>((event, emit) {
       final list = List<Product>.from(state.cartList);
       if (event.index >= 0 && event.index < list.length) {
@@ -31,6 +30,9 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       }
       emit(CartState(cartList: list));
     });
+    on<ClearCart>((event, emit) {
+      emit(CartState(cartList: []));
+    },);
   }
   
 }

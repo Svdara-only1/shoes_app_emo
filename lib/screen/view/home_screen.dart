@@ -563,6 +563,9 @@ class _ProductCard extends StatelessWidget {
                                   icon: isFav
                                       ? Icons.favorite
                                       : Icons.favorite_border,
+                                  color: isFav 
+                                      ?Colors.red
+                                      :Colors.white,
                                 ),
                               );
                             },
@@ -634,7 +637,8 @@ class _ProductCard extends StatelessWidget {
 
 class _GlassIcon extends StatelessWidget {
   final IconData icon;
-  const _GlassIcon({required this.icon});
+  final Color color;
+  const _GlassIcon({required this.icon, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -650,7 +654,7 @@ class _GlassIcon extends StatelessWidget {
             borderRadius: BorderRadius.circular(999),
             border: Border.all(color: Colors.white.withOpacity(.18)),
           ),
-          child: Icon(icon, color: Colors.white, size: 18),
+          child: Icon(icon, color: Color(Colorr.primaryColorBlue), size: 18),
         ),
       ),
     );
